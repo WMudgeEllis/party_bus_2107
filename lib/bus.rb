@@ -32,4 +32,8 @@ def over_capacity?
   end
 end
 
+def kick_out
+  @passengers.shift
+end
+
 end
