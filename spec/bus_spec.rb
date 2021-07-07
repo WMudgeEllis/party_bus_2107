@@ -107,6 +107,7 @@ describe Bus do
         bus.kick_out
 
         expect(bus.number_of_passengers).to eq(5)
+        expect(bus.over_capacity?).to eq(true)
       end
 
       it 'new capacity check' do
@@ -121,64 +122,16 @@ describe Bus do
         bus.kick_out
 
         expect(bus.over_capacity?).to eq(true)
-      end
 
-      it 'kick out two passengers' do
-        bus = Bus.new('Mikes Awesome Bus', 4)
-        bus.add_passenger('Mike')
-        bus.add_passenger('Megan')
-        bus.add_passenger('Tim')
-        bus.add_passenger('James')
-        bus.add_passenger('Cat')
-        bus.add_passenger('Alice')
-
-        #kick out from first kickout test
-        bus.kick_out
-        #kick out from first kickout test
         bus.kick_out
         bus.kick_out
-
 
         expect(bus.number_of_passengers).to eq(3)
-      end
-
-      it 'recheck capacity' do
-        bus = Bus.new('Mikes Awesome Bus', 4)
-        bus.add_passenger('Mike')
-        bus.add_passenger('Megan')
-        bus.add_passenger('Tim')
-        bus.add_passenger('James')
-        bus.add_passenger('Cat')
-        bus.add_passenger('Alice')
-
-        #kick out from first kickout test
-        bus.kick_out
-        #kick out from first kickout test
-        bus.kick_out
-        bus.kick_out
-
         expect(bus.over_capacity?).to eq(false)
-      end
-
-      it 'recheck passengers' do
-        bus = Bus.new('Mikes Awesome Bus', 4)
-        bus.add_passenger('Mike')
-        bus.add_passenger('Megan')
-        bus.add_passenger('Tim')
-        bus.add_passenger('James')
-        bus.add_passenger('Cat')
-        bus.add_passenger('Alice')
-
-        #kick out from first kickout test
-        bus.kick_out
-        #kick out from first kickout test
-        bus.kick_out
-        bus.kick_out
-
-
         expect(bus.passengers).to eq(["James", "Cat", "Alice"])
       end
 
+      
 
 
     end
