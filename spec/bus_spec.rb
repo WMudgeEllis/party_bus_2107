@@ -30,7 +30,7 @@ describe Bus do
 
   # Iteration 2
   context 'Passengers' do
-    xit 'returns a list of passengers' do
+    it 'returns a list of passengers' do
       bus = Bus.new('Mikes Awesome Bus', 4)
       bus.add_passenger('Mike')
       bus.add_passenger('Megan')
@@ -39,7 +39,7 @@ describe Bus do
       expect(bus.passengers).to eq(['Mike', 'Megan', 'Tim'])
     end
 
-    xit 'returns a list of uppercased names' do
+    it 'returns a list of uppercased names' do
       bus = Bus.new('Mikes Awesome Bus', 4)
       bus.add_passenger('Mike')
       bus.add_passenger('Megan')
