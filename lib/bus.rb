@@ -17,8 +17,19 @@ def yell_at_passengers
     @passengers.each do |rider|
       yelled_at_passengers << rider.upcase
     end
-
     yelled_at_passengers
+end
+
+def number_of_passengers
+  @passengers.length
+end
+
+def over_capacity?
+  if @passengers.length < 4
+    false
+  elsif @passengers.length > 4
+    true
+  end
 end
 
 end
